@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.wppRouter = void 0;
+const express_1 = require("express");
+const send_text_message_controller_1 = require("../../useCases/send-text-message/send-text-message.controller");
+const send_text_message_service_1 = require("../../useCases/send-text-message/send-text-message.service");
+const wppRouter = (0, express_1.Router)();
+exports.wppRouter = wppRouter;
+const sendTextMessageService = new send_text_message_service_1.SendTextMessageService();
+const sendTextController = new send_text_message_controller_1.SendTextMessageController(sendTextMessageService);
+wppRouter.post("/send-text", sendTextController.handle);
