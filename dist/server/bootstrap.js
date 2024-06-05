@@ -5,13 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Bootstrap = void 0;
 require("express-async-errors");
-require("dotenv");
+const dotenv_1 = require("dotenv");
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const errorHandler_1 = require("../middlewares/errorHandler");
 const connect_wpp_web_service_1 = require("../services/connect-wpp-web.service");
 const autoResponse_1 = require("../useCases/auto-response/autoResponse");
 const router_1 = require("./router");
+(0, dotenv_1.config)();
 class Bootstrap {
     app;
     port;

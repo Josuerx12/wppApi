@@ -1,11 +1,13 @@
 import "express-async-errors";
-import "dotenv";
+import { config } from "dotenv";
 import express from "express";
 import cors from "cors";
 import { errorHandler } from "../middlewares/errorHandler";
 import { ConnectWppService } from "../services/connect-wpp-web.service";
 import { AutoResponse } from "../useCases/auto-response/autoResponse";
 import { routes } from "./router";
+
+config();
 
 export class Bootstrap {
   private app: express.Express;
