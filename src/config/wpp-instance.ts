@@ -9,7 +9,7 @@ const wppInstance = new Client({
       "--disable-setuid-sandbox",
       "--user-data-dir=puppeter/frotascap",
     ],
-    //  executablePath: "/usr/bin/chromium-browser",
+    executablePath: "/usr/bin/chromium-browser",
   },
   webVersionCache: {
     remotePath:
